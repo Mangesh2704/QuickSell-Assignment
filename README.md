@@ -1,5 +1,10 @@
 ## Website Preview
 
-![Desktop Screenshot 1](./preview/Desktop-1.png)
-![Desktop Screenshot 2](./preview/Desktop-2.png)
-![Mobile Screenshot 1](./preview/Mobile-1.png)
+### Grouping - Status
+![status](./preview/grouping-status.png)
+### Grouping - User
+![user](./preview/grouping-user.png)
+### Grouping - Priority
+![priority](./preview/grouping-priority.png)
+### Card
+![card](./preview/card.png)
