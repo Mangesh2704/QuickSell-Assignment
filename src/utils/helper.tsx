@@ -7,7 +7,7 @@ import MediumPriorityIcon from '../components/icons_FEtask/Img - Medium Priority
 import HighPriorityIcon from '../components/icons_FEtask/Img - High Priority.svg'; 
 import UrgentPriorityIcon from '../components/icons_FEtask/SVG - Urgent Priority colour.svg'; 
 import BacklogIcon from '../components/icons_FEtask/Backlog.svg'; 
-import TodoIcon from '../components/icons_FEtask/todo.svg'; 
+import TodoIcon from '../components/icons_FEtask/To-do.svg'; 
 import InProgressIcon from '../components/icons_FEtask/in-progress.svg'; 
 import DoneIcon from '../components/icons_FEtask/Done.svg'; 
 import CanceledIcon from '../components/icons_FEtask/Cancelled.svg'; 
