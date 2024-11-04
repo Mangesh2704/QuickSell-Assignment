@@ -1,5 +1,7 @@
 ## Website Preview
 
+Website Link: https://quick-sell-assignment-pink.vercel.app/
+
 ### Grouping - Status
 ![status](./preview/grouping-status.png)
 ### Grouping - User
@@ -9,4 +11,4 @@
 ### Card
 ![card](./preview/card.png)
 
-Website Link: https://quick-sell-assignment-pink.vercel.app/
+
