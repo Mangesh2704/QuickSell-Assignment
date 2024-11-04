@@ -8,7 +8,7 @@ import HighPriorityIcon from '../components/icons_FEtask/Img - High Priority.svg
 import UrgentPriorityIcon from '../components/icons_FEtask/SVG - Urgent Priority colour.svg'; 
 import BacklogIcon from '../components/icons_FEtask/Backlog.svg'; 
 import TodoIcon from '../components/icons_FEtask/To-do.svg'; 
-import InProgressIcon from '../components/icons_FEtask/in-progress.svg'; 
+import InProgressIcon from '../components/icons_FEtask/in-progress.svg'; // Ensure this is included
 import DoneIcon from '../components/icons_FEtask/Done.svg'; 
 import CanceledIcon from '../components/icons_FEtask/Cancelled.svg'; 
 
@@ -27,7 +27,7 @@ export const getStatusIcon = (status: string) => {
     switch (status) {
         case "Backlog": return <img src={BacklogIcon} alt="Backlog" style={{ width: 24, height: 24 }} />;
         case "Todo": return <img src={TodoIcon} alt="Todo" style={{ width: 24, height: 24 }} />;
-        case "In progress": return <TbProgress color='#FFC300' size={16} />;
+        case "In progress": return <img src={InProgressIcon} alt="In Progress" style={{ width: 24, height: 24 }} />; // Using InProgressIcon here
         case "Done": return <img src={DoneIcon} alt="Done" style={{ width: 16, height: 16 }} />;
         case "Canceled": return <img src={CanceledIcon} alt="Canceled" style={{ width: 16, height: 16 }} />;
         default: return <img src={CanceledIcon} alt="Canceled" style={{ width: 16, height: 16 }} />;
