@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
 import Card from '../Card';
-import "./column.css"
+import "./column.css";
 import { GrAdd } from 'react-icons/gr';
 import { LuMoreHorizontal } from 'react-icons/lu';
 import { Ticket, User } from '../../interfaces';
 import { getPriorityIcon, getStatusIcon } from '../../utils/helper';
 import UserIcon from '../UserIcon';
-
 
 function Column({ tickets, grouping, groupBy, userIdToData }: { tickets: Ticket[], grouping: string, groupBy: string, userIdToData: Record<string, User> }) {
 
@@ -15,19 +14,20 @@ function Column({ tickets, grouping, groupBy, userIdToData }: { tickets: Ticket[
             return groupBy;
         if (grouping === "priority")
             return groupBy;
-        if (grouping === "user")
+        if (grouping === "user" && userIdToData[groupBy])
             return userIdToData[groupBy].name;
-    }, [grouping, groupBy]);
+        return ''; // fallback in case groupBy does not match any user
+    }, [grouping, groupBy, userIdToData]); // include userIdToData
 
     const icon = useMemo(() => {
         if (grouping === "status")
             return getStatusIcon(groupBy);
         if (grouping === "priority")
             return getPriorityIcon(groupBy);
-        if (grouping === "user")
-            return <UserIcon name={userIdToData[groupBy].name} available={userIdToData[groupBy].available} />
-    }, [grouping, groupBy])
-
+        if (grouping === "user" && userIdToData[groupBy])
+            return <UserIcon name={userIdToData[groupBy].name} available={userIdToData[groupBy].available} />;
+        return null; // fallback in case groupBy does not match any user
+    }, [grouping, groupBy, userIdToData]); // include userIdToData
 
     return (
         <div className='column'>
@@ -45,7 +45,15 @@ function Column({ tickets, grouping, groupBy, userIdToData }: { tickets: Ticket[
                 </div>
             </div>
             <div className='cards-container'>
-                {tickets.map((ticket: Ticket) => <Card key={ticket.id} ticket={ticket} userData={userIdToData[ticket.userId]} hideStatusIcon={grouping === "status"} hideProfileIcon={grouping === "user"} />)}
+                {tickets.map((ticket: Ticket) => (
+                    <Card 
+                        key={ticket.id} 
+                        ticket={ticket} 
+                        userData={userIdToData[ticket.userId]} 
+                        hideStatusIcon={grouping === "status"} 
+                        hideProfileIcon={grouping === "user"} 
+                    />
+                ))}
             </div>
         </div>
     );
